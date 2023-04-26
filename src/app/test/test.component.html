@@ -1,0 +1,26 @@
+<div class="container">
+  <form> 
+      <div class="form-group">
+          <label>id</label>
+          <input type="text" class="form-control" name="id" [(ngModel)]="product.id"
+              #i="ngModel" required pattern="^[1-9]$">
+          <div class="alert alert-danger" *ngIf="i.invalid && i.touched">only one number can be supported.</div>
+          <div *ngIf="i.errors?.['required']">Field is required</div>
+      </div>
+      <div class="form-group">
+          <label>titre</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="product.title" minlength="3" (input)="validateTitle()">
+          <div class="alert alert-danger" *ngIf="titleInvalid && titleTouched">
+              You need to enter at least 3 characters with one Upercase.
+          </div>
+      </div>
+      <div class="form-group">
+          <label>quantity</label>
+          <input type="text" class="form-control" name="quantity" [(ngModel)]="product.quantity"
+              #r="ngModel" required pattern="^\d{3}$">
+          <div class="alert alert-danger" *ngIf="r.invalid && r.touched">this field can be only 3 numbers</div>
+          <div *ngIf="r.errors?.['required']">Field is required</div>
+      </div>
+      <button [disabled]="!isFormValid()" (click)="submit()">Submit</button>
+  </form>
+</div>

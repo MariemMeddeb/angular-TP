@@ -12,9 +12,10 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { AnnonceRoutingModule } from './annonce/annonce-routing.module';
 import { FormproductComponent } from './formproduct/formproduct.component';
 import { TestComponent } from './test/test.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 const routes:Routes=[
-  {path:'home',component:HomeComponent},
+  {path:'home',component:ProductComponent},
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'product',component:FormproductComponent},
   {path:'test',component:TestComponent},
@@ -34,7 +35,8 @@ const routes:Routes=[
     NotFoundComponent,
     AnnonceComponent,
     FormproductComponent,
-    TestComponent
+    TestComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

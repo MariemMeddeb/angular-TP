@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   prop:boolean=true
   message:string=''
   prop1='bonjour'
+  prixMax:number;
 
 
 listProdcut:Product[]=[]

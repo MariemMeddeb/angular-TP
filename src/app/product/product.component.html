@@ -1,4 +1,4 @@
-<p>product works!</p>
+<!--p>product works!</-p>
 <p>{{ name }}</p>
 <h1>{{ 1 + add() }}</h1>
 <button [disabled]="prop" type="submit">save</button>
@@ -8,7 +8,7 @@
 <input [(ngModel)]='prop1'/>
 <p>{{prop1}}</p>
 
-<table border="3">
+<table-- border="3">
     <tr>
         <td>id</td>
         <td>title</td>
@@ -29,4 +29,15 @@
     </tr>
 
     
-</table>
+</table-->
+<div class="container">
+    <div class="row">
+        <input type="number" [(ngModel)]="prixMax">
+            <app-product-card 
+                *ngFor="let p of listProdcut, let i =index" 
+                [Prod]="p" 
+                class="col-3 m-3"
+                [MaxPrix]="prixMax">
+            </app-product-card>
+    </div>
+</div>
